@@ -24,7 +24,8 @@ configure do
 end
 
 get '/' do
-	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+    results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC'
+	erb index
 end
 
 get '/new' do
