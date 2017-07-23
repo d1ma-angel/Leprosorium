@@ -24,8 +24,8 @@ configure do
 end
 
 get '/' do
-    results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC'
-	erb index
+    @results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC'
+	erb :index
 end
 
 get '/new' do
