@@ -53,3 +53,9 @@ get '/details/:post_id' do
 
     erb :details
 end
+
+post '/details/:post_id' do
+    post_id = params[:post_id]
+    content = params[:content]
+    erb "You typed comment #{content} with id #{post_id}"
+end
