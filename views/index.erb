@@ -2,7 +2,9 @@
 <br />
 <% @results.each do |post| %>
     <p>
-        <%= post['content'] %><br />
-        Added at: <%= post['created_date'] %><hr />
+        <%= post['content'] %><br /><br />
+        Added at: <%= post['created_date'] %><br /><br />
+        <a href="/details/<%= post['id'] %>">Comments</a>
     </p>
+    <hr />
 <% end %>
