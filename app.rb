@@ -65,9 +65,9 @@ get '/details/:post_id' do
 end
 
 post '/details/:post_id' do
-    post_id = params[:post_id]
+    post_id = params[:post_id].to_i
     content = params[:content]
     @db.execute 'INSERT INTO Comments (content, created_date, post_id) values (?, datetime(), ?)', [content, post_id]
     
-    redirect to('/details/' + post_id)
+    redirect to('/details/' + post_id.to_s)
 end
