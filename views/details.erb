@@ -6,6 +6,12 @@
 </p>
 <br />
 <h4>Comments:</h4>
+
+<% @comments.each do |comment| %>
+    <p>
+        <%= comment['content'] %>
+    </p>
+<% end %>
 <p>
     <form action="/details/<%= @row['id'] %>" method="post" role="form">
       <textarea class="form-control" name="content" rows="6" placeholder="Type comment text here"></textarea>
